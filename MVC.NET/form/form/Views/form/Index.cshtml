@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Enter User Name: @Html.TextBox("username")
+        @Html.ValidationMessage("username")
+    </p>
+    <p>
+        Enter User Email: @Html.TextBox("email")
+        @Html.ValidationMessage("email")
+    </p>
+    <p>
+        Enter User Password: @Html.TextBox("password")
+        @Html.ValidationMessage("password")
+    </p>
+    <input type="submit" value="Submit" />
+}
+@if (ViewData["SuccessMessage"] != null)
+{
+    @Html.Raw(ViewData["SuccessMessage"])
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>
+                @if (ViewData["emailMessage"] != null)
+                {
+                    <div>
+                        @ViewData["nameMessage"]
+                    </div>}
+                    
+            </td>
+            <td>
+
+                @if (ViewData["emailMessage"] != null)
+                {
+                    <div>
+                        @ViewData["emailMessage"]
+                    </div>
+                 }
+            </td>
+            <td>
+
+                @if (ViewData["PassMessage"] != null)
+                {
+                    <div>
+                        @ViewData["PassMessage"]
+                    </div>
+                }
+            </td>
+        </tr>
+       
+    </tbody>
+</table>
+<!-- Display Success Message -->
+<!-- Display Submitted Data -->
+

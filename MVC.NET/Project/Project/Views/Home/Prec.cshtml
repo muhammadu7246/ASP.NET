@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Project.Models.Product>  // Ensure the model is of type IEnumerable<Product>
+
+    <h2>Products</h2>  <!-- Title for the list -->
+@foreach (var product in Model)  // Loop through each product in the model
+{
+        <div>
+            <h3>@product.Name</h3>
+            <p>@product.Description</p>  <!-- Product Description -->
+            <p>Price: @product.Price</p>  <!-- Product Price -->
+            <p>Created on: @product.CreatedDate.ToString("d")</p>  <!-- Product Created Date -->
+        </div>
+}
